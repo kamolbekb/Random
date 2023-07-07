@@ -4,12 +4,12 @@
     {
         static void Main(string[] args)
         {
-            int random_number = new Random().Next(1, 10);
+            int random_number = new Random().Next(1, 100);
             int ans, attempts = 1;
         qayta:
-            Console.Write("Random sonni aniqlang(1-10 bolgan son kiriting): ");
+            Console.Write("To identofy random number enter number from 1 to 100: ");
             ans = Convert.ToInt32(Console.ReadLine());
-            if (ans < 0 && ans > 11)
+            if (ans < 0 && ans > 101)
             {
                 Console.WriteLine("Kiritilgan raqam talablarga javob bermaydi");
                 attempts++;
@@ -17,20 +17,20 @@
             }
             else if (ans < random_number)
             {
-                Console.WriteLine("Siz kiritgan raqam Random sondan kichkinaroq, yana bir bor harakat qilib ko`ring!");
+                Console.WriteLine("The number that you entered is less than random nuber, please try again!");
                 attempts++;
                 goto qayta;
             }
             else if (ans > random_number)
             {
-                Console.WriteLine("Siz kiritgan raqam Random sondan kattaroq, yana bir bor harakat qilib ko`ring!");
+                Console.WriteLine("The number that you entered is greater than random nuber, please try again!");
                 attempts++;
                 goto qayta;
             }
             else if (ans == random_number)
             {
-                Console.WriteLine("Congratulations!!! Siz random sonni muvofaqiyatli aniqladingiz!");
-                Console.WriteLine($"Buning uchun sizda {attempts}-ta urunish ketdi");
+                Console.WriteLine("Congratulations!!! You have successfully find random number!");
+                Console.WriteLine($"To find random number you`ve spent {attempts}-attempts");
             }
             else
             {
